@@ -26,35 +26,12 @@ function Login() {
        .post("/login",data)
        .then(function(response){
         localStorage.setItem("user",JSON.stringify(response.data))
-       })
-       navigate('/products');
-      //  .then(data => {
-      //     console.log(data)
-      //    localStorage.setItem('user', JSON.stringify(data)); // Armazena no localStorage
-      //  })
-      //  .then(response => localStorage.setItem( "user_id", response.user_id))
-      //  .then(response => localStorage.setItem( "username", response.username))
-      //  .then(response => localStorage.setItem( "email", response.email))
-      //  .then(response => localStorage.setItem( "role",response.role))
-
-          // ,
-          // ,
-          // ,
-          // "created_at", response.role,
-          // "status", response.role,
-          // "user_img", response.user.
-
-      // if (response.status === 200) {
-      //   // Requisição bem-sucedida, redirecionar para outra página
-        
-      //   console.log(response)
-      // } else {
-      //   // Tratar erros caso o status não seja 200
-      //   console.error('Falha ao fazer login:', response.data);
-      // }
+       }) //respota 200 envia para /products
+       navigate('/products'); 
+       //
     } catch (error) {
       console.error('Erro na requisição:', error);
-      alert("Usuario ou Senha Invalidos")
+      alert("Usuario ou Senha Invalidos") //mensagem de erro caso falha
     }
   };
 
