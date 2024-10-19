@@ -16,19 +16,10 @@ import Batch from './pages/Batch/Batch'
 import Sector from './pages/Sector/Sector'
 import Supplier from './pages/Supplier/Supplier'
 import UserProfile from './pages/UserProfile/UserProfile'
-
-/* ProtectedRoute redireciona o usuario para a pagina de login, caso o mesmo não esteja logado
-IMPORTANTE: Use essa função em toda página que não deve ser acessada antes do login */
-function ProtectedRoute({ element: Element }) {
-  const user = localStorage.getItem("user");
-  return user ? <Element /> : <Navigate to="/login" />;
-}
-
-/* ProtectedLogin redireciona o usuario da página de login para a página de produtos, caso o mesmo já esteja logado */
-function ProtectedLogin({ element: Element }) {
-  const user = localStorage.getItem("user");
-  return !user ? <Element /> : <Navigate to="/products" />;
-}
+import {
+  ProtectedLogin,
+  ProtectedRoute
+} from './components/ProtectedRoutes'
 
 function App() {
   return (
