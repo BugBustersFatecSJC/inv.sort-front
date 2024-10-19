@@ -38,6 +38,7 @@ function App() {
           {/*
           * TODO: Usar o /products como nosso index (/)
           */}
+          <Route path="/" element={<Navigate to="/products" />} />
           <Route path="/cadastro" element={<InitialSignUp />} />
           <Route path="/login" element={<ProtectedLogin element={Login} />} />
           <Route path="/products" element={<ProtectedRoute element={MainPageRender} />} />
